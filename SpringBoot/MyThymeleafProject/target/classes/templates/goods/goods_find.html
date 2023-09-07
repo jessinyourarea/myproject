@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="featured spad">
+    <main class="container">
+        <div class="row">
+            <div class="hero__search">
+                <div class="hero__search__form">
+                    <form method="get" action="/goods/find" class="inline">
+                        <div class="hero__search__categories">
+                            All Categories
+                            <span class="arrow_carrot-down"></span>
+                        </div>
+                        <input type="text" placeholder="검색어를 입력하세요." name="fd" th:value="${fd}">
+                        <button type="submit" class="site-btn">검색</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div style="height:20px"></div>
+        <div class="row">
+            <div class="col-md-3" th:each="vo:${list}" >
+                <div class="thumbnail" style="height:345px">
+                    <a href="#">
+                        <img th:src="${vo.poster}"style="width:200px;height:240px;">
+                        <div class="caption" style="text-decoration: none">
+                            <p th:text="${vo.name}" style="font-size: 12px;"></p>
+                            <p th:text="${vo.price}" style="font-size: 10px;text-align: right"></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="product__pagination" style="text-align: center">
+                <a th:href="@{/good/good_list(page=${startpage-1},fd=${fd})}"><i class="fa fa-chevron-left"></i></a>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a th:href="@{/good/good_list(page=${endpage+1},fd=${fd})}"><i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

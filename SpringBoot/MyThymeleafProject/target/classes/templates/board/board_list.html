@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="../img/breadcrumb.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                    <h2>커뮤니티</h2>
+                    <div class="breadcrumb__option">
+                        <a href="/">Home&nbsp;</a>
+                        <span>자유게시판</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<div class="wrapper row3">
+    <main class="container clear">
+        <!-- main body -->
+        <table class="table">
+            <tr>
+                <td>
+                    <a href="/board/board_insert" class="btn btn-sm btn-primary">새글</a>
+                </td>
+            </tr>
+        </table>
+        <table class="table">
+        <tr>
+            <th width="10%" class="text-center">번호</th>
+            <th width="45%" class="text-center">제목</th>
+            <th width="15%" class="text-center">이름</th>
+            <th width="20%" class="text-center">작성일</th>
+            <th width="10%" class="text-center">조회수</th>
+        </tr>
+        <tr th:each="vo:${list}">
+            <td width="10%" class="text-center" th:text="${vo.no}"></td>
+            <td width="45%"><a th:href="@{/board/board_detail(no=${vo.no})}" th:text="${vo.subject}"></a></td>
+            <td width="15%" class="text-center" th:text="${vo.name}"></td>
+            <td width="20%" class="text-center" th:text="${vo.regdate}"></td>
+            <td width="10%" class="text-center" th:text="${vo.hit}"></td>
+        </tr>
+        <tr>
+            <td colspan="5" class="text-right">
+                <a th:href="@{/board/board_list(page=${curpage>1?curpage-1:curpage})}" class="btn btn-sm btn-success">이전</a>
+                <span th:text="${curpage}"></span> page / <span th:text="${totalpage}"></span> pages
+                <a th:href="@{/board/board_list(page=${curpage<totalpage?curpage+1:curpage})}" class="btn btn-sm btn-success">다음</a>
+            </td>
+        </tr>
+        </table>
+    </main>
+</div>
+</body>
+</html>

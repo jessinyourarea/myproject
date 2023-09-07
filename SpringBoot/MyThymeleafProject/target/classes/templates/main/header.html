@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- Header Section Begin -->
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="header__logo">
+                    <a href="/"><img src="img/logo.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <nav class="header__menu">
+                    <ul>
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="#">반려용품</a>
+                            <ul class="header__menu__dropdown">
+                                <li><a href="/goods/list">검색</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Pages</a>
+                            <ul class="header__menu__dropdown">
+                                <li><a href="./shop-details.html">Shop Details</a></li>
+                                <li><a href="./shoping-cart.html">Shoping Cart</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">커뮤니티</a>
+                            <ul class="header__menu__dropdown">
+                                <li><a href="/board/board_list">자유게시판</a></li>
+                                <li><a href="/board/board_insert">글쓰기</a></li>
+                                <li><a href="/board/board_list">??</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./contact.html">고객센터</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-3">
+                <div class="header__cart">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                        <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="humberger__open">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+</header>
+<!-- Header Section End -->
+</body>
+</html>
